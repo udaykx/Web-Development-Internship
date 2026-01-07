@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Layout</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+        }
+
+        .page {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            background: #111827;
+            color: white;
+        }
+
+        .navbar img {
+            width: 42px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            margin: 20px;
+            gap: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .main {
+            flex: 3;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px;
+            background: #111827;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="navbar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ96JR2LRD2xOTNrrEdJxt0hjksDE8M7kvSmg&s" alt="logo">
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <div class="sidebar">
+            <h3>Dashboard</h3>
+            <p>Overview</p>
+            <p>Projects</p>
+            <p>Settings</p>
+        </div>
+
+        <div class="main">
+            <h2>Welcome Back 👋</h2>
+            <p>This dashboard uses Flexbox to organize content clearly and responsively.</p>
+
+            <div class="cards">
+                <div class="card">
+                    <h4>Projects</h4>
+                    <p>5 Active Projects</p>
+                </div>
+
+                <div class="card">
+                    <h4>Tasks</h4>
+                    <p>12 Pending Tasks</p>
+                </div>
+
+                <div class="card">
+                    <h4>Messages</h4>
+                    <p>3 New Messages</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Flexbox Layout</p>
+    </div>
+
+</div>
+
+</body>
+</html>
