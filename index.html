@@ -2,86 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uday | Portfolio</title>
-
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <title>DOM Assignment</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>UDAY</h1>
-        <p>Web Developer | Student </p>
-    </header>
+    <h1 id="title">Welcome Student</h1>
+    <p id="description">Click buttons to see DOM in action</p>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#social">Social</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="buttons">
+        <button onclick="changeText()">Change Text</button>
+        <button onclick="changeColor()">Change Color</button>
+        <button onclick="addItem()">Add Skill</button>
+        <button onclick="removeItem()">Remove Skill</button>
+    </div>
 
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>
-            I am a computer engineering student learning web development.
-            I enjoy creating responsive websites and making YouTube content.
-        </p>
-    </section>
+    <h3>My Skills</h3>
+    <ul id="skillList">
+        <li>HTML</li>
+        <li>CSS</li>
+    </ul>
 
-    <section id="skills" class="container">
-        <h2>Skills</h2>
-        <div class="card-container">
-            <div class="card">HTML</div>
-            <div class="card">CSS</div>
-            <div class="card">JavaScript</div>
-            <div class="card">Responsive Design</div>
-        </div>
-    </section>
-
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-        <div class="card-container">
-            <div class="card">Portfolio Website</div>
-            <div class="card">Landing Page</div>
-            <div class="card">Responsive UI Design</div>
-        </div>
-    </section>
-
-    <!-- Social Links -->
-    <section id="social" class="container">
-        <h2>Connect With Me</h2>
-        <div class="social-links">
-            <a href="https://youtube.com/@udayslens?si=wrOa-YaJE7dhz9AY" target="_blank" class="youtube">
-                <i class="fab fa-youtube"></i> YouTube
-            </a>
-
-            <a href="https://www.instagram.com/udaykx/" target="_blank" class="instagram">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-
-            <a href="https://linkedin.com/in/udaykx" target="_blank" class="linkedin">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-
-            <a href="https://github.com/udaykx" target="_blank" class="github">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-        </div>
-    </section>
-
-    <section id="contact" class="container">
-        <h2>Contact Me</h2>
-        <p>Email: udaykumar2600@gmail.com</p>
-    </section>
-
-    <footer>
-        <p>© 2026 Uday Lens | All Rights Reserved</p>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
