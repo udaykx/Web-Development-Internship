@@ -1,28 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>DOM Assignment</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uday | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    body{background:#0f0f14;color:#fff;scroll-behavior:smooth}
+    a{text-decoration:none;color:inherit}
+    header{position:fixed;top:0;width:100%;background:#0f0f14cc;backdrop-filter:blur(10px);z-index:10}
+    nav{max-width:1100px;margin:auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+    nav ul{display:flex;gap:20px;list-style:none}
+    nav li{cursor:pointer;opacity:.8}
+    nav li:hover{opacity:1}
+    section{min-height:100vh;padding:120px 20px;max-width:1100px;margin:auto}
+    h1{font-size:3rem}
+    h2{font-size:2rem;margin-bottom:30px}
+    span{color:#7c7cff}
+    p{opacity:.85;line-height:1.7}
+    .btn{display:inline-block;margin-top:20px;padding:12px 30px;border-radius:30px;background:#7c7cff;color:#000;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .card{background:#171720;border-radius:16px;padding:24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .skill{background:#1d1d2b;padding:20px;border-radius:14px;text-align:center}
+    .project{cursor:pointer;transition:.3s}
+    .project:hover{transform:translateY(-6px)}
+    footer{text-align:center;padding:30px 0;opacity:.6}
+    .reveal{opacity:0;transform:translateY(40px);transition:1s}
+    .reveal.active{opacity:1;transform:none}
+    @media(max-width:768px){.hero{grid-template-columns:1fr} h1{font-size:2.2rem}}
+  </style>
 </head>
 <body>
 
-    <h1 id="title">Welcome Student</h1>
-    <p id="description">Click buttons to see DOM in action</p>
-
-    <div class="buttons">
-        <button onclick="changeText()">Change Text</button>
-        <button onclick="changeColor()">Change Color</button>
-        <button onclick="addItem()">Add Skill</button>
-        <button onclick="removeItem()">Remove Skill</button>
-    </div>
-
-    <h3>My Skills</h3>
-    <ul id="skillList">
-        <li>HTML</li>
-        <li>CSS</li>
+<header>
+  <nav>
+    <h3>Uday</h3>
+    <ul>
+      <li onclick="scrollToSection('home')">Home</li>
+      <li onclick="scrollToSection('skills')">Skills</li>
+      <li onclick="scrollToSection('projects')">Projects</li>
+      <li onclick="scrollToSection('contact')">Contact</li>
     </ul>
+  </nav>
+</header>
 
-    <script src="script.js"></script>
+<section id="home" class="hero reveal">
+  <div>
+    <h1>Hi, I'm <span>Uday</span></h1>
+    <p>Computer Engineering student, web developer, content creator, and sketch artist. I build clean websites and document my creative journey.</p>
+    <a class="btn" href="#projects">Explore Work</a>
+  </div>
+  <div class="card">
+    <p>🎓 Third Year Computer Engineering</p>
+    <p>💻 Web Development</p>
+    <p>🎥 YouTube Creator</p>
+    <p>🎨 Sketching</p>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="skill">HTML, CSS, JavaScript</div>
+    <div class="skill">DOM, Flexbox, Responsive UI</div>
+    <div class="skill">API Integration</div>
+    <div class="skill">DaVinci Resolve</div>
+    <div class="skill">Sketching & Digital Art</div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card project" onclick="openProject('Weather App using API')">
+      <h3>Weather App</h3>
+      <p>Real-time weather data using JavaScript API.</p>
+    </div>
+    <div class="card project" onclick="openProject('DOM Website')">
+      <h3>DOM Website</h3>
+      <p>Interactive website built using pure DOM concepts.</p>
+    </div>
+    <div class="card project" onclick="openProject('YouTube Vlogs')">
+      <h3>YouTube Content</h3>
+      <p>Hostel life & self-growth storytelling.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: udaykumar2600@email.com</p>
+    <p>Instagram: @udaykx</p>
+    <p>YouTube: udaylens</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Uday | Built with HTML, CSS & JS</p>
+</footer>
+
+<script>
+  function scrollToSection(id){
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  }
+
+  function openProject(name){
+    alert('Project Selected: ' + name);
+  }
+
+  const reveals=document.querySelectorAll('.reveal');
+  window.addEventListener('scroll',()=>{
+    reveals.forEach(el=>{
+      const top=el.getBoundingClientRect().top;
+      if(top < window.innerHeight - 100){
+        el.classList.add('active');
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
